@@ -203,8 +203,13 @@ This is an addon for TopMinion. Make sure you have the rights to use TopMinion b
 
 ## Credits
 
+<<<<<<< Updated upstream
 - **TopMinion**: Original plugin by Sarry20
 - **TopMinion-Crafting**: Addon created for crafting functionality
+=======
+- **TopMinion**: Original plugin by sarry20
+- **TopMinion-Crafting**: Addon created by joogiebear
+>>>>>>> Stashed changes
 
 ---
 

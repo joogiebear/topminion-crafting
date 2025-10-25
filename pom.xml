@@ -12,6 +12,15 @@
     <name>TopMinion-Crafting</name>
     <description>Addon for TopMinion that adds crafting recipes for minions and upgrades</description>
 
+    <developers>
+        <developer>
+            <name>joogiebear</name>
+            <roles>
+                <role>Developer</role>
+            </roles>
+        </developer>
+    </developers>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
