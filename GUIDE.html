@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopMinion-Crafting - Complete Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        minion: {
+                            primary: '#f59e0b',
+                            secondary: '#3b82f6',
+                            dark: '#1f2937',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100 min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-amber-600 to-orange-600 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center">
+                <h1 class="text-5xl font-extrabold text-white mb-4">
+                    ⛏️ TopMinion-Crafting
+                </h1>
+                <p class="text-xl text-amber-100 max-w-3xl mx-auto">
+                    Craft your own minions and upgrades! A powerful addon for TopMinion v3 that lets players create level 1 minions and upgrades through custom crafting recipes.
+                </p>
+                <div class="mt-6 flex gap-4 justify-center flex-wrap">
+                    <span class="px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">Version 1.0.0</span>
+                    <span class="px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">Requires TopMinion v3</span>
+                    <span class="px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">Minecraft 1.19+</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-gray-800 sticky top-0 z-50 shadow-lg border-b border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center space-x-8 py-4 overflow-x-auto">
+                <a href="#installation" class="text-amber-400 hover:text-amber-300 font-medium whitespace-nowrap transition">📦 Installation</a>
+                <a href="#features" class="text-amber-400 hover:text-amber-300 font-medium whitespace-nowrap transition">✨ Features</a>
+                <a href="#recipes" class="text-amber-400 hover:text-amber-300 font-medium whitespace-nowrap transition">📝 Recipes</a>
+                <a href="#configuration" class="text-amber-400 hover:text-amber-300 font-medium whitespace-nowrap transition">⚙️ Configuration</a>
+                <a href="#permissions" class="text-amber-400 hover:text-amber-300 font-medium whitespace-nowrap transition">🔐 Permissions</a>
+                <a href="#troubleshooting" class="text-amber-400 hover:text-amber-300 font-medium whitespace-nowrap transition">🔧 Help</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Quick Start -->
+        <section class="mb-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 shadow-2xl">
+            <h2 class="text-3xl font-bold mb-6 text-white flex items-center gap-3">
+                🚀 Quick Start
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white/10 backdrop-blur rounded-xl p-6">
+                    <div class="text-4xl mb-3">1️⃣</div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Install</h3>
+                    <p class="text-blue-100">Place the plugin JAR in your plugins folder with TopMinion v3</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur rounded-xl p-6">
+                    <div class="text-4xl mb-3">2️⃣</div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Configure</h3>
+                    <p class="text-blue-100">Edit config.yml to match your TopMinion setup and customize recipes</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur rounded-xl p-6">
+                    <div class="text-4xl mb-3">3️⃣</div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Craft</h3>
+                    <p class="text-blue-100">Players can now craft minions and upgrades using your custom recipes!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Installation -->
+        <section id="installation" class="mb-16">
+            <h2 class="text-4xl font-bold mb-8 text-amber-400 flex items-center gap-3">
+                📦 Installation
+            </h2>
+
+            <div class="bg-gray-800 rounded-xl p-8 shadow-xl border border-gray-700 mb-6">
+                <h3 class="text-2xl font-bold mb-4 text-white">Requirements</h3>
+                <ul class="space-y-3 text-gray-300">
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-400 text-xl">✓</span>
+                        <span><strong class="text-white">Minecraft Server:</strong> Version 1.19 or higher (Spigot/Paper)</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-400 text-xl">✓</span>
+                        <span><strong class="text-white">TopMinion:</strong> Version 3.x (Required - must be installed first)</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-400 text-xl">✓</span>
+                        <span><strong class="text-white">Java:</strong> Version 17 or higher</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-gray-800 rounded-xl p-8 shadow-xl border border-gray-700">
+                <h3 class="text-2xl font-bold mb-4 text-white">Installation Steps</h3>
+                <ol class="space-y-4 text-gray-300">
+                    <li class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold">1</span>
+                        <div>
+                            <p class="font-semibold text-white mb-1">Download the Plugin</p>
+                            <p>Get <code class="bg-gray-900 px-2 py-1 rounded text-amber-400">TopMinion-Crafting-1.0.0.jar</code> from your plugin source</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold">2</span>
+                        <div>
+                            <p class="font-semibold text-white mb-1">Install TopMinion First</p>
+                            <p>Make sure TopMinion v3 is already installed and working on your server</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold">3</span>
+                        <div>
+                            <p class="font-semibold text-white mb-1">Copy to Plugins Folder</p>
+                            <p>Place the JAR file in your server's <code class="bg-gray-900 px-2 py-1 rounded text-amber-400">plugins/</code> folder</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold">4</span>
+                        <div>
+                            <p class="font-semibold text-white mb-1">Restart Server</p>
+                            <p>Restart your server completely (reload may not work properly)</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold">5</span>
+                        <div>
+                            <p class="font-semibold text-white mb-1">Configure Recipes</p>
+                            <p>Edit <code class="bg-gray-900 px-2 py-1 rounded text-amber-400">plugins/TopMinion-Crafting/config.yml</code> to match your TopMinion setup</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold">6</span>
+                        <div>
+                            <p class="font-semibold text-white mb-1">Reload Configuration</p>
+                            <p>Run <code class="bg-gray-900 px-2 py-1 rounded text-amber-400">/topminioncrafting reload</code> to apply changes</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section id="features" class="mb-16">
+            <h2 class="text-4xl font-bold mb-8 text-amber-400 flex items-center gap-3">
+                ✨ Features
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl p-6 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-3 text-white flex items-center gap-2">
+                        ⛏️ Craft Minions
+                    </h3>
+                    <p class="text-purple-100 mb-4">Create level 1 minions of any type through custom crafting recipes:</p>
+                    <ul class="space-y-2 text-purple-100">
+                        <li class="flex items-center gap-2">⭐ Miner Minions</li>
+                        <li class="flex items-center gap-2">🌾 Farmer Minions</li>
+                        <li class="flex items-center gap-2">🎣 Fisher Minions</li>
+                        <li class="flex items-center gap-2">🪓 Lumberjack Minions</li>
+                        <li class="flex items-center gap-2">⚔️ Slayer Minions</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-600 to-green-700 rounded-xl p-6 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-3 text-white flex items-center gap-2">
+                        🔧 Craft Upgrades
+                    </h3>
+                    <p class="text-green-100 mb-4">Create upgrade items to enhance your minions:</p>
+                    <ul class="space-y-2 text-green-100">
+                        <li class="flex items-center gap-2">⚡ Fuel Upgrades (speed boost)</li>
+                        <li class="flex items-center gap-2">🎯 Behavior Upgrades (compactor, smelter, etc.)</li>
+                        <li class="flex items-center gap-2">💰 Auto-Sell Upgrades</li>
+                        <li class="flex items-center gap-2">🚫 Skins are NOT craftable (as intended)</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl p-6 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-3 text-white flex items-center gap-2">
+                        ⚙️ Fully Configurable
+                    </h3>
+                    <p class="text-blue-100 mb-4">Customize everything to fit your server:</p>
+                    <ul class="space-y-2 text-blue-100">
+                        <li class="flex items-center gap-2">📝 Shaped & Shapeless recipes</li>
+                        <li class="flex items-center gap-2">🎨 Custom ingredients</li>
+                        <li class="flex items-center gap-2">🔐 Optional permission per recipe</li>
+                        <li class="flex items-center gap-2">✅ Enable/disable individual recipes</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-amber-600 to-amber-700 rounded-xl p-6 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-3 text-white flex items-center gap-2">
+                        🔌 API Integration
+                    </h3>
+                    <p class="text-amber-100 mb-4">Seamlessly integrates with TopMinion:</p>
+                    <ul class="space-y-2 text-amber-100">
+                        <li class="flex items-center gap-2">✨ Uses real TopMinion items</li>
+                        <li class="flex items-center gap-2">🎯 Perfect compatibility</li>
+                        <li class="flex items-center gap-2">💾 All minion data preserved</li>
+                        <li class="flex items-center gap-2">🔄 Auto-updates when TopMinion changes</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Default Recipes -->
+        <section id="recipes" class="mb-16">
+            <h2 class="text-4xl font-bold mb-8 text-amber-400 flex items-center gap-3">
+                📝 Default Recipes
+            </h2>
+
+            <p class="text-gray-300 mb-8 text-lg">Here are the example recipes included by default. You can customize these in the config!</p>
+
+            <!-- Minion Recipes -->
+            <div class="mb-12">
+                <h3 class="text-3xl font-bold mb-6 text-white">⛏️ Minion Recipes</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Miner -->
+                    <div class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700">
+                        <h4 class="text-xl font-bold mb-4 text-amber-400 flex items-center gap-2">
+                            ⛏️ Miner Minion
+                        </h4>
+                        <div class="bg-gray-900 rounded-lg p-4 mb-4">
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="bg-gray-700 h-12 rounded flex items-center justify-center text-2xl">🪨</div>
+                                <div class="bg-gray-700 h-12 rounded flex items-center justify-center text-2xl">🪨</div>
+                                <div class="bg-gray-700 h-12 rounded flex items-center justify-center text-2xl">🪨</div>
+                                <div class="bg-gray-700 h-12 rounded flex items-center justify-center text-2xl">🪨</div>
+                                <div class="bg-amber-700 h-12 rounded flex items-center justify-center text-2xl">⛏️</div>
+                                <div class="bg-gray-700 h-12 rounded flex items-center justify-center text-2xl">🪨</div>
+                                <div class="bg-gray-700 h-12 rounded flex items-center justify-center text-2xl">🪨</div>
+                                <div class="bg-gray-700 h-12 rounded flex items-center justify-center text-2xl">🪨</div>
+                                <div class="bg-gray-700 h-12 rounded flex items-center justify-center text-2xl">🪨</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 text-sm">
+                            <strong>Recipe:</strong> 8x Cobblestone + 1x Diamond Pickaxe
+                        </p>
+                    </div>
+
+                    <!-- Farmer -->
+                    <div class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700">
+                        <h4 class="text-xl font-bold mb-4 text-amber-400 flex items-center gap-2">
+                            🌾 Farmer Minion
+                        </h4>
+                        <div class="bg-gray-900 rounded-lg p-4 mb-4">
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="bg-yellow-700 h-12 rounded flex items-center justify-center text-2xl">🌾</div>
+                                <div class="bg-yellow-700 h-12 rounded flex items-center justify-center text-2xl">🌾</div>
+                                <div class="bg-yellow-700 h-12 rounded flex items-center justify-center text-2xl">🌾</div>
+                                <div class="bg-yellow-700 h-12 rounded flex items-center justify-center text-2xl">🌾</div>
+                                <div class="bg-amber-700 h-12 rounded flex items-center justify-center text-2xl">🔱</div>
+                                <div class="bg-yellow-700 h-12 rounded flex items-center justify-center text-2xl">🌾</div>
+                                <div class="bg-yellow-700 h-12 rounded flex items-center justify-center text-2xl">🌾</div>
+                                <div class="bg-yellow-700 h-12 rounded flex items-center justify-center text-2xl">🌾</div>
+                                <div class="bg-yellow-700 h-12 rounded flex items-center justify-center text-2xl">🌾</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 text-sm">
+                            <strong>Recipe:</strong> 8x Wheat + 1x Diamond Hoe
+                        </p>
+                    </div>
+
+                    <!-- Fisher -->
+                    <div class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700">
+                        <h4 class="text-xl font-bold mb-4 text-amber-400 flex items-center gap-2">
+                            🎣 Fisher Minion
+                        </h4>
+                        <div class="bg-gray-900 rounded-lg p-4 mb-4">
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="bg-blue-700 h-12 rounded flex items-center justify-center text-2xl">🐟</div>
+                                <div class="bg-blue-700 h-12 rounded flex items-center justify-center text-2xl">🐟</div>
+                                <div class="bg-blue-700 h-12 rounded flex items-center justify-center text-2xl">🐟</div>
+                                <div class="bg-blue-700 h-12 rounded flex items-center justify-center text-2xl">🐟</div>
+                                <div class="bg-amber-700 h-12 rounded flex items-center justify-center text-2xl">🎣</div>
+                                <div class="bg-blue-700 h-12 rounded flex items-center justify-center text-2xl">🐟</div>
+                                <div class="bg-blue-700 h-12 rounded flex items-center justify-center text-2xl">🐟</div>
+                                <div class="bg-blue-700 h-12 rounded flex items-center justify-center text-2xl">🐟</div>
+                                <div class="bg-blue-700 h-12 rounded flex items-center justify-center text-2xl">🐟</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 text-sm">
+                            <strong>Recipe:</strong> 8x Cod + 1x Fishing Rod
+                        </p>
+                    </div>
+
+                    <!-- Lumberjack -->
+                    <div class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700">
+                        <h4 class="text-xl font-bold mb-4 text-amber-400 flex items-center gap-2">
+                            🪓 Lumberjack Minion
+                        </h4>
+                        <div class="bg-gray-900 rounded-lg p-4 mb-4">
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="bg-amber-800 h-12 rounded flex items-center justify-center text-2xl">🪵</div>
+                                <div class="bg-amber-800 h-12 rounded flex items-center justify-center text-2xl">🪵</div>
+                                <div class="bg-amber-800 h-12 rounded flex items-center justify-center text-2xl">🪵</div>
+                                <div class="bg-amber-800 h-12 rounded flex items-center justify-center text-2xl">🪵</div>
+                                <div class="bg-amber-700 h-12 rounded flex items-center justify-center text-2xl">🪓</div>
+                                <div class="bg-amber-800 h-12 rounded flex items-center justify-center text-2xl">🪵</div>
+                                <div class="bg-amber-800 h-12 rounded flex items-center justify-center text-2xl">🪵</div>
+                                <div class="bg-amber-800 h-12 rounded flex items-center justify-center text-2xl">🪵</div>
+                                <div class="bg-amber-800 h-12 rounded flex items-center justify-center text-2xl">🪵</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 text-sm">
+                            <strong>Recipe:</strong> 8x Oak Logs + 1x Diamond Axe
+                        </p>
+                    </div>
+
+                    <!-- Slayer -->
+                    <div class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700">
+                        <h4 class="text-xl font-bold mb-4 text-amber-400 flex items-center gap-2">
+                            ⚔️ Slayer Minion
+                        </h4>
+                        <div class="bg-gray-900 rounded-lg p-4 mb-4">
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="bg-green-800 h-12 rounded flex items-center justify-center text-2xl">🧟</div>
+                                <div class="bg-green-800 h-12 rounded flex items-center justify-center text-2xl">🧟</div>
+                                <div class="bg-green-800 h-12 rounded flex items-center justify-center text-2xl">🧟</div>
+                                <div class="bg-green-800 h-12 rounded flex items-center justify-center text-2xl">🧟</div>
+                                <div class="bg-amber-700 h-12 rounded flex items-center justify-center text-2xl">⚔️</div>
+                                <div class="bg-green-800 h-12 rounded flex items-center justify-center text-2xl">🧟</div>
+                                <div class="bg-green-800 h-12 rounded flex items-center justify-center text-2xl">🧟</div>
+                                <div class="bg-green-800 h-12 rounded flex items-center justify-center text-2xl">🧟</div>
+                                <div class="bg-green-800 h-12 rounded flex items-center justify-center text-2xl">🧟</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 text-sm">
+                            <strong>Recipe:</strong> 8x Rotten Flesh + 1x Diamond Sword
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Upgrade Recipes -->
+            <div>
+                <h3 class="text-3xl font-bold mb-6 text-white">🔧 Upgrade Recipes</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Coal Fuel -->
+                    <div class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700">
+                        <h4 class="text-xl font-bold mb-4 text-green-400 flex items-center gap-2">
+                            ⚡ Coal Fuel
+                        </h4>
+                        <div class="bg-gray-900 rounded-lg p-4 mb-4">
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="bg-gray-900 h-12 rounded flex items-center justify-center text-2xl">🪨</div>
+                                <div class="bg-gray-900 h-12 rounded flex items-center justify-center text-2xl">🪨</div>
+                                <div class="bg-gray-900 h-12 rounded flex items-center justify-center text-2xl">🪨</div>
+                                <div class="bg-gray-900 h-12 rounded flex items-center justify-center text-2xl">🪨</div>
+                                <div class="bg-gray-600 h-12 rounded flex items-center justify-center text-2xl">🔩</div>
+                                <div class="bg-gray-900 h-12 rounded flex items-center justify-center text-2xl">🪨</div>
+                                <div class="bg-gray-900 h-12 rounded flex items-center justify-center text-2xl">🪨</div>
+                                <div class="bg-gray-900 h-12 rounded flex items-center justify-center text-2xl">🪨</div>
+                                <div class="bg-gray-900 h-12 rounded flex items-center justify-center text-2xl">🪨</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 text-sm">
+                            <strong>Recipe:</strong> 8x Coal + 1x Iron Ingot<br>
+                            <strong>Effect:</strong> Speeds up minion by 25%
+                        </p>
+                    </div>
+
+                    <!-- Compactor -->
+                    <div class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700">
+                        <h4 class="text-xl font-bold mb-4 text-green-400 flex items-center gap-2">
+                            📦 Compactor
+                        </h4>
+                        <div class="bg-gray-900 rounded-lg p-4 mb-4">
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="bg-gray-600 h-12 rounded flex items-center justify-center text-2xl">🔩</div>
+                                <div class="bg-amber-800 h-12 rounded flex items-center justify-center text-2xl">📥</div>
+                                <div class="bg-gray-600 h-12 rounded flex items-center justify-center text-2xl">🔩</div>
+                                <div class="bg-gray-600 h-12 rounded flex items-center justify-center text-2xl">🔩</div>
+                                <div class="bg-gray-700 h-12 rounded flex items-center justify-center text-2xl">⚙️</div>
+                                <div class="bg-gray-600 h-12 rounded flex items-center justify-center text-2xl">🔩</div>
+                                <div class="bg-gray-600 h-12 rounded flex items-center justify-center text-2xl">🔩</div>
+                                <div class="bg-red-700 h-12 rounded flex items-center justify-center text-2xl">🔴</div>
+                                <div class="bg-gray-600 h-12 rounded flex items-center justify-center text-2xl">🔩</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 text-sm">
+                            <strong>Recipe:</strong> 3x Iron + Hopper + Piston + Redstone<br>
+                            <strong>Effect:</strong> Compacts items automatically
+                        </p>
+                    </div>
+
+                    <!-- Smelter -->
+                    <div class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700">
+                        <h4 class="text-xl font-bold mb-4 text-green-400 flex items-center gap-2">
+                            🔥 Smelter
+                        </h4>
+                        <div class="bg-gray-900 rounded-lg p-4 mb-4">
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="bg-gray-600 h-12 rounded flex items-center justify-center text-2xl">🔩</div>
+                                <div class="bg-gray-600 h-12 rounded flex items-center justify-center text-2xl">🔩</div>
+                                <div class="bg-gray-600 h-12 rounded flex items-center justify-center text-2xl">🔩</div>
+                                <div class="bg-gray-600 h-12 rounded flex items-center justify-center text-2xl">🔩</div>
+                                <div class="bg-gray-700 h-12 rounded flex items-center justify-center text-2xl">🔥</div>
+                                <div class="bg-gray-600 h-12 rounded flex items-center justify-center text-2xl">🔩</div>
+                                <div class="bg-gray-600 h-12 rounded flex items-center justify-center text-2xl">🔩</div>
+                                <div class="bg-gray-600 h-12 rounded flex items-center justify-center text-2xl">🔩</div>
+                                <div class="bg-gray-600 h-12 rounded flex items-center justify-center text-2xl">🔩</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 text-sm">
+                            <strong>Recipe:</strong> 8x Iron Ingot + 1x Furnace<br>
+                            <strong>Effect:</strong> Auto-smelts collected items
+                        </p>
+                    </div>
+
+                    <!-- Diamond Spread -->
+                    <div class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700">
+                        <h4 class="text-xl font-bold mb-4 text-green-400 flex items-center gap-2">
+                            💎 Diamond Spread
+                        </h4>
+                        <div class="bg-gray-900 rounded-lg p-4 mb-4">
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="bg-cyan-600 h-12 rounded flex items-center justify-center text-2xl">💎</div>
+                                <div class="bg-cyan-600 h-12 rounded flex items-center justify-center text-2xl">💎</div>
+                                <div class="bg-cyan-600 h-12 rounded flex items-center justify-center text-2xl">💎</div>
+                                <div class="bg-cyan-600 h-12 rounded flex items-center justify-center text-2xl">💎</div>
+                                <div class="bg-green-600 h-12 rounded flex items-center justify-center text-2xl">💚</div>
+                                <div class="bg-cyan-600 h-12 rounded flex items-center justify-center text-2xl">💎</div>
+                                <div class="bg-cyan-600 h-12 rounded flex items-center justify-center text-2xl">💎</div>
+                                <div class="bg-cyan-600 h-12 rounded flex items-center justify-center text-2xl">💎</div>
+                                <div class="bg-cyan-600 h-12 rounded flex items-center justify-center text-2xl">💎</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 text-sm">
+                            <strong>Recipe:</strong> 8x Diamond + 1x Emerald<br>
+                            <strong>Effect:</strong> Spreads diamond collection
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="bg-blue-900/50 border border-blue-600 rounded-xl p-6 mt-8">
+                <h4 class="text-xl font-bold mb-3 text-blue-300 flex items-center gap-2">
+                    💡 Note About Skins
+                </h4>
+                <p class="text-blue-100">
+                    SKIN type upgrades are <strong>NOT craftable</strong> by design. They can only be obtained through other means (shops, rewards, etc.). This is intentional to maintain their special value!
+                </p>
+            </div>
+        </section>
+
+        <!-- Configuration -->
+        <section id="configuration" class="mb-16">
+            <h2 class="text-4xl font-bold mb-8 text-amber-400 flex items-center gap-3">
+                ⚙️ Configuration Guide
+            </h2>
+
+            <div class="bg-gray-800 rounded-xl p-8 shadow-xl border border-gray-700 mb-8">
+                <h3 class="text-2xl font-bold mb-4 text-white">📍 Config File Location</h3>
+                <p class="text-gray-300 mb-4">After installation, the config file will be created at:</p>
+                <div class="bg-gray-900 p-4 rounded-lg">
+                    <code class="text-amber-400">plugins/TopMinion-Crafting/config.yml</code>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 rounded-xl p-8 shadow-xl border border-gray-700 mb-8">
+                <h3 class="text-2xl font-bold mb-6 text-white">🔧 Configuring Minion IDs</h3>
+                <p class="text-gray-300 mb-4">
+                    <strong class="text-amber-400">Important:</strong> The <code class="bg-gray-900 px-2 py-1 rounded text-amber-400">minion_id</code> must exactly match the ID in your TopMinion configs!
+                </p>
+                <ol class="space-y-4 text-gray-300">
+                    <li class="flex items-start gap-3">
+                        <span class="text-amber-400 font-bold">1.</span>
+                        <div>
+                            <p>Go to your TopMinion configs folder:</p>
+                            <code class="bg-gray-900 px-2 py-1 rounded text-amber-400 block mt-2">plugins/TopMinion/MinionConfigs/[type]/</code>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-amber-400 font-bold">2.</span>
+                        <div>
+                            <p>Open a minion config file (e.g., <code class="bg-gray-900 px-2 py-1 rounded">miner-config-example.yml</code>)</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-amber-400 font-bold">3.</span>
+                        <div>
+                            <p>Find the <code class="bg-gray-900 px-2 py-1 rounded">minion_id</code> line at the top:</p>
+                            <div class="bg-gray-900 p-3 rounded mt-2">
+                                <code class="text-green-400">minion_id: MINER</code>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-amber-400 font-bold">4.</span>
+                        <div>
+                            <p>Copy that exact ID and use it in your recipe config:</p>
+                            <div class="bg-gray-900 p-3 rounded mt-2">
+                                <code class="text-blue-400">minion_id: "MINER"  # Must match exactly!</code>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="bg-gray-800 rounded-xl p-8 shadow-xl border border-gray-700 mb-8">
+                <h3 class="text-2xl font-bold mb-6 text-white">📝 Recipe Configuration</h3>
+
+                <h4 class="text-xl font-semibold mb-4 text-amber-400">Shaped Recipe Example</h4>
+                <div class="bg-gray-900 p-4 rounded-lg mb-6 overflow-x-auto">
+                    <pre class="text-sm text-gray-300"><code>miner_basic:
+  enabled: true                    # Enable/disable this recipe
+  minion_id: "MINER"               # Must match TopMinion config ID
+  minion_level: 1                  # Always 1 for crafting
+  recipe_type: "SHAPED"            # Recipe requires specific pattern
+  shape:
+    - "CCC"                        # Top row
+    - "CPC"                        # Middle row
+    - "CCC"                        # Bottom row
+  ingredients:
+    C: COBBLESTONE                 # C = Cobblestone
+    P: DIAMOND_PICKAXE             # P = Diamond Pickaxe
+  permission: "custom.permission"  # OPTIONAL - can be omitted!</code></pre>
+                </div>
+
+                <h4 class="text-xl font-semibold mb-4 text-amber-400">Shapeless Recipe Example</h4>
+                <div class="bg-gray-900 p-4 rounded-lg mb-6 overflow-x-auto">
+                    <pre class="text-sm text-gray-300"><code>autosell_basic:
+  enabled: true
+  upgrade_id: "autosell"
+  recipe_type: "SHAPELESS"         # Items can go anywhere
+  ingredients:
+    - EMERALD
+    - CHEST
+    - GOLD_INGOT
+  # No permission specified - uses default!</code></pre>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-purple-900/50 to-blue-900/50 border border-purple-600 rounded-xl p-6">
+                <h4 class="text-xl font-bold mb-3 text-purple-300 flex items-center gap-2">
+                    🔐 Permission System (OPTIONAL)
+                </h4>
+                <p class="text-gray-200 mb-4">
+                    Each recipe can have an <strong>optional</strong> permission requirement:
+                </p>
+                <ul class="space-y-3 text-gray-200">
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-400">✓</span>
+                        <span><strong>With permission:</strong> <code class="bg-gray-900 px-2 py-1 rounded">permission: "myplugin.craft.miner"</code> - Only players with this permission can craft</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-400">✓</span>
+                        <span><strong>Without permission:</strong> Just omit the line - Uses default permission (<code class="bg-gray-900 px-2 py-1 rounded">topminioncrafting.craft.minion</code> or <code class="bg-gray-900 px-2 py-1 rounded">topminioncrafting.craft.upgrade</code>)</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-blue-400">ℹ️</span>
+                        <span><strong>Default permissions</strong> are set to <code class="bg-gray-900 px-2 py-1 rounded">true</code> for all players by default</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Permissions -->
+        <section id="permissions" class="mb-16">
+            <h2 class="text-4xl font-bold mb-8 text-amber-400 flex items-center gap-3">
+                🔐 Permissions
+            </h2>
+
+            <div class="bg-gray-800 rounded-xl p-8 shadow-xl border border-gray-700">
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="border-b border-gray-700">
+                            <th class="py-3 px-4 text-amber-400 font-bold">Permission</th>
+                            <th class="py-3 px-4 text-amber-400 font-bold">Description</th>
+                            <th class="py-3 px-4 text-amber-400 font-bold">Default</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-300">
+                        <tr class="border-b border-gray-700/50">
+                            <td class="py-3 px-4">
+                                <code class="bg-gray-900 px-2 py-1 rounded text-amber-400">topminioncrafting.admin</code>
+                            </td>
+                            <td class="py-3 px-4">Access to admin commands (reload)</td>
+                            <td class="py-3 px-4">
+                                <span class="bg-red-900/50 text-red-300 px-3 py-1 rounded-full text-sm">op only</span>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-gray-700/50">
+                            <td class="py-3 px-4">
+                                <code class="bg-gray-900 px-2 py-1 rounded text-amber-400">topminioncrafting.craft.minion</code>
+                            </td>
+                            <td class="py-3 px-4">Ability to craft minions (default permission)</td>
+                            <td class="py-3 px-4">
+                                <span class="bg-green-900/50 text-green-300 px-3 py-1 rounded-full text-sm">everyone</span>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-gray-700/50">
+                            <td class="py-3 px-4">
+                                <code class="bg-gray-900 px-2 py-1 rounded text-amber-400">topminioncrafting.craft.upgrade</code>
+                            </td>
+                            <td class="py-3 px-4">Ability to craft upgrades (default permission)</td>
+                            <td class="py-3 px-4">
+                                <span class="bg-green-900/50 text-green-300 px-3 py-1 rounded-full text-sm">everyone</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4">
+                                <code class="bg-gray-900 px-2 py-1 rounded text-blue-400">custom.permission</code>
+                            </td>
+                            <td class="py-3 px-4">Custom per-recipe permissions (you define these)</td>
+                            <td class="py-3 px-4">
+                                <span class="bg-blue-900/50 text-blue-300 px-3 py-1 rounded-full text-sm">your choice</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bg-blue-900/50 border border-blue-600 rounded-xl p-6 mt-6">
+                <h4 class="text-xl font-bold mb-3 text-blue-300">💡 Permission Tips</h4>
+                <ul class="space-y-2 text-blue-100">
+                    <li class="flex items-start gap-2">
+                        <span>•</span>
+                        <span>To restrict a recipe to VIPs: Set <code class="bg-gray-900 px-2 py-1 rounded">permission: "vip.craft"</code></span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span>•</span>
+                        <span>To make a recipe available to everyone: Omit the permission line entirely</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span>•</span>
+                        <span>Use permission plugins like LuckPerms to manage who has what permissions</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Commands -->
+        <section id="commands" class="mb-16">
+            <h2 class="text-4xl font-bold mb-8 text-amber-400 flex items-center gap-3">
+                ⌨️ Commands
+            </h2>
+
+            <div class="bg-gray-800 rounded-xl p-8 shadow-xl border border-gray-700">
+                <div class="space-y-6">
+                    <div class="bg-gray-900 rounded-lg p-6">
+                        <div class="flex flex-wrap items-center gap-3 mb-3">
+                            <code class="bg-amber-900/50 text-amber-300 px-4 py-2 rounded-lg text-lg font-mono">/topminioncrafting reload</code>
+                            <span class="bg-blue-900/50 text-blue-300 px-3 py-1 rounded-full text-sm">Aliases: /tmc, /tmcrafting</span>
+                        </div>
+                        <p class="text-gray-300">
+                            <strong class="text-white">Description:</strong> Reloads the configuration file and re-registers all recipes
+                        </p>
+                        <p class="text-gray-400 mt-2">
+                            <strong class="text-gray-300">Permission:</strong> <code class="bg-gray-800 px-2 py-1 rounded">topminioncrafting.admin</code>
+                        </p>
+                        <p class="text-gray-400 mt-2">
+                            <strong class="text-gray-300">Use Case:</strong> After editing config.yml, run this command to apply changes without restarting the server
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Troubleshooting -->
+        <section id="troubleshooting" class="mb-16">
+            <h2 class="text-4xl font-bold mb-8 text-amber-400 flex items-center gap-3">
+                🔧 Troubleshooting
+            </h2>
+
+            <div class="space-y-6">
+
+                <!-- Issue 1 -->
+                <div class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700">
+                    <h3 class="text-xl font-bold mb-3 text-red-400 flex items-center gap-2">
+                        ❌ Recipes Not Working / Not Appearing
+                    </h3>
+                    <div class="bg-gray-900 rounded-lg p-4">
+                        <p class="text-gray-300 mb-3"><strong class="text-white">Possible Causes:</strong></p>
+                        <ul class="space-y-2 text-gray-300 list-disc list-inside">
+                            <li>TopMinion is not installed or not enabled</li>
+                            <li>The <code class="bg-gray-800 px-2 py-1 rounded">minion_id</code> or <code class="bg-gray-800 px-2 py-1 rounded">upgrade_id</code> doesn't match your TopMinion config</li>
+                            <li>Recipe is disabled (<code class="bg-gray-800 px-2 py-1 rounded">enabled: false</code>)</li>
+                            <li>Invalid material names in ingredients</li>
+                        </ul>
+                        <p class="text-green-300 mt-4"><strong class="text-green-400">Solutions:</strong></p>
+                        <ul class="space-y-2 text-green-300 list-disc list-inside">
+                            <li>Run <code class="bg-gray-800 px-2 py-1 rounded">/plugins</code> and verify TopMinion shows as green</li>
+                            <li>Check TopMinion config files and match the IDs exactly</li>
+                            <li>Enable debug mode in config (<code class="bg-gray-800 px-2 py-1 rounded">settings.debug: true</code>) and check console</li>
+                            <li>Run <code class="bg-gray-800 px-2 py-1 rounded">/topminioncrafting reload</code> after config changes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Issue 2 -->
+                <div class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700">
+                    <h3 class="text-xl font-bold mb-3 text-red-400 flex items-center gap-2">
+                        ❌ Getting Wrong Item When Crafting
+                    </h3>
+                    <div class="bg-gray-900 rounded-lg p-4">
+                        <p class="text-gray-300 mb-3"><strong class="text-white">Possible Causes:</strong></p>
+                        <ul class="space-y-2 text-gray-300 list-disc list-inside">
+                            <li>The <code class="bg-gray-800 px-2 py-1 rounded">minion_id</code> or <code class="bg-gray-800 px-2 py-1 rounded">upgrade_id</code> is incorrect</li>
+                            <li>TopMinion API returned null (check console for errors)</li>
+                        </ul>
+                        <p class="text-green-300 mt-4"><strong class="text-green-400">Solutions:</strong></p>
+                        <ul class="space-y-2 text-green-300 list-disc list-inside">
+                            <li>Verify the ID matches <strong>exactly</strong> in TopMinion configs (case-sensitive!)</li>
+                            <li>Check server console for error messages</li>
+                            <li>Make sure TopMinion has the minion/upgrade configured properly</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Issue 3 -->
+                <div class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700">
+                    <h3 class="text-xl font-bold mb-3 text-red-400 flex items-center gap-2">
+                        ❌ Permission Denied When Crafting
+                    </h3>
+                    <div class="bg-gray-900 rounded-lg p-4">
+                        <p class="text-gray-300 mb-3"><strong class="text-white">Possible Causes:</strong></p>
+                        <ul class="space-y-2 text-gray-300 list-disc list-inside">
+                            <li>Player doesn't have the required permission</li>
+                            <li>Permission plugin not configured correctly</li>
+                        </ul>
+                        <p class="text-green-300 mt-4"><strong class="text-green-400">Solutions:</strong></p>
+                        <ul class="space-y-2 text-green-300 list-disc list-inside">
+                            <li>Check what permission the recipe requires in config.yml</li>
+                            <li>Grant the permission using your permission plugin (e.g., LuckPerms)</li>
+                            <li>Default permissions are <code class="bg-gray-800 px-2 py-1 rounded">topminioncrafting.craft.minion</code> and <code class="bg-gray-800 px-2 py-1 rounded">topminioncrafting.craft.upgrade</code></li>
+                            <li>Remove custom permission line from recipe to use defaults</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Issue 4 -->
+                <div class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700">
+                    <h3 class="text-xl font-bold mb-3 text-red-400 flex items-center gap-2">
+                        ❌ Plugin Won't Load
+                    </h3>
+                    <div class="bg-gray-900 rounded-lg p-4">
+                        <p class="text-gray-300 mb-3"><strong class="text-white">Possible Causes:</strong></p>
+                        <ul class="space-y-2 text-gray-300 list-disc list-inside">
+                            <li>TopMinion is not installed</li>
+                            <li>Wrong server version (requires 1.19+)</li>
+                            <li>Java version too old (requires Java 17+)</li>
+                        </ul>
+                        <p class="text-green-300 mt-4"><strong class="text-green-400">Solutions:</strong></p>
+                        <ul class="space-y-2 text-green-300 list-disc list-inside">
+                            <li>Install TopMinion v3 first</li>
+                            <li>Update your server to 1.19 or higher</li>
+                            <li>Update Java to version 17 or higher</li>
+                            <li>Check console for specific error messages</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="bg-amber-900/50 border border-amber-600 rounded-xl p-6 mt-8">
+                <h4 class="text-xl font-bold mb-3 text-amber-300 flex items-center gap-2">
+                    💡 Still Need Help?
+                </h4>
+                <p class="text-amber-100 mb-3">
+                    Enable debug mode to see detailed information:
+                </p>
+                <div class="bg-gray-900 p-4 rounded-lg">
+                    <code class="text-amber-300">settings:<br>&nbsp;&nbsp;debug: true</code>
+                </div>
+                <p class="text-amber-100 mt-3">
+                    Then check your server console for detailed debug messages when recipes load and when players craft items.
+                </p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="mb-16">
+            <h2 class="text-4xl font-bold mb-8 text-amber-400 flex items-center gap-3">
+                ❓ FAQ
+            </h2>
+
+            <div class="space-y-4">
+
+                <details class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700 cursor-pointer">
+                    <summary class="text-xl font-bold text-white cursor-pointer">
+                        Can I craft higher level minions?
+                    </summary>
+                    <p class="text-gray-300 mt-4">
+                        No, this addon only supports crafting <strong>level 1 minions</strong>. Players can then upgrade them using TopMinion's normal upgrade system. This is by design to balance progression.
+                    </p>
+                </details>
+
+                <details class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700 cursor-pointer">
+                    <summary class="text-xl font-bold text-white cursor-pointer">
+                        Can I craft skins?
+                    </summary>
+                    <p class="text-gray-300 mt-4">
+                        No, <strong>SKIN type upgrades are not craftable</strong>. This is intentional - skins are meant to be special/rare items obtained through other means (shops, crates, events, etc.).
+                    </p>
+                </details>
+
+                <details class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700 cursor-pointer">
+                    <summary class="text-xl font-bold text-white cursor-pointer">
+                        How do I change recipe ingredients?
+                    </summary>
+                    <p class="text-gray-300 mt-4">
+                        Edit the <code class="bg-gray-900 px-2 py-1 rounded">config.yml</code> file and change the materials under <code class="bg-gray-900 px-2 py-1 rounded">ingredients</code>. Make sure to use valid Minecraft material names (e.g., DIAMOND, IRON_INGOT, etc.). After editing, run <code class="bg-gray-900 px-2 py-1 rounded">/topminioncrafting reload</code>.
+                    </p>
+                </details>
+
+                <details class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700 cursor-pointer">
+                    <summary class="text-xl font-bold text-white cursor-pointer">
+                        Can I add more minion types?
+                    </summary>
+                    <p class="text-gray-300 mt-4">
+                        Yes! If you create new minion configs in TopMinion, you can add recipes for them in this plugin's config. Just follow the same format and use the correct <code class="bg-gray-900 px-2 py-1 rounded">minion_id</code>.
+                    </p>
+                </details>
+
+                <details class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700 cursor-pointer">
+                    <summary class="text-xl font-bold text-white cursor-pointer">
+                        What's the difference between SHAPED and SHAPELESS recipes?
+                    </summary>
+                    <p class="text-gray-300 mt-4">
+                        <strong>SHAPED:</strong> Items must be placed in specific positions (like a vanilla crafting recipe). Defined using the <code class="bg-gray-900 px-2 py-1 rounded">shape</code> parameter.<br><br>
+                        <strong>SHAPELESS:</strong> Items can be placed anywhere in the crafting grid. Just list the ingredients.
+                    </p>
+                </details>
+
+                <details class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700 cursor-pointer">
+                    <summary class="text-xl font-bold text-white cursor-pointer">
+                        Do I need to restart after config changes?
+                    </summary>
+                    <p class="text-gray-300 mt-4">
+                        No! Just run <code class="bg-gray-900 px-2 py-1 rounded">/topminioncrafting reload</code> (or <code class="bg-gray-900 px-2 py-1 rounded">/tmc reload</code>) to reload the config and recipes without restarting your server.
+                    </p>
+                </details>
+
+                <details class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700 cursor-pointer">
+                    <summary class="text-xl font-bold text-white cursor-pointer">
+                        Can I make recipes require custom permissions?
+                    </summary>
+                    <p class="text-gray-300 mt-4">
+                        Yes! Each recipe can have an <strong>optional</strong> <code class="bg-gray-900 px-2 py-1 rounded">permission</code> field. If specified, only players with that permission can craft the item. If omitted, it uses the default permissions (<code class="bg-gray-900 px-2 py-1 rounded">topminioncrafting.craft.minion</code> or <code class="bg-gray-900 px-2 py-1 rounded">topminioncrafting.craft.upgrade</code>).
+                    </p>
+                </details>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
+            <p class="mb-2">
+                <strong class="text-amber-400">TopMinion-Crafting</strong> v1.0.0 - Addon for TopMinion v3
+            </p>
+            <p class="text-sm">
+                Made with ❤️ for the Minecraft community
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

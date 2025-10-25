@@ -1,0 +1,21 @@
+# Diamond Spread Upgrade Recipe
+# Copy this file and modify it to create recipes for custom diamond spread upgrades
+
+enabled: true
+
+# Must match the upgrade_id in TopMinion/MinionUpgrades/upgrade/[filename].yml
+upgrade_id: "diamond_spread"
+
+recipe_type: "SHAPED"
+
+shape:
+  - "DDD"
+  - "DED"
+  - "DDD"
+
+ingredients:
+  D: DIAMOND        # D = Diamond
+  E: EMERALD        # E = Emerald
+
+# Permission is optional - remove this line to use default permission
+permission: "topminioncrafting.craft.upgrade"

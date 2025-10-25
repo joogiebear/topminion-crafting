@@ -1,0 +1,21 @@
+# Smelter Upgrade Recipe
+# Copy this file and modify it to create recipes for custom smelter upgrades
+
+enabled: true
+
+# Must match the upgrade_id in TopMinion/MinionUpgrades/upgrade/[filename].yml
+upgrade_id: "smelter"
+
+recipe_type: "SHAPED"
+
+shape:
+  - "FFF"
+  - "FBF"
+  - "FFF"
+
+ingredients:
+  F: IRON_INGOT     # F = Iron Ingot
+  B: FURNACE        # B = Furnace
+
+# Permission is optional - remove this line to use default permission
+permission: "topminioncrafting.craft.upgrade"

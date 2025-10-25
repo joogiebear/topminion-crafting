@@ -1,0 +1,165 @@
+========================================
+   TopMinion-Crafting - QUICK START
+========================================
+
+JAR FILE: TopMinion-Crafting-1.0.0.jar
+Size: 23KB
+Version: 1.0.0
+
+========================================
+   INSTALLATION
+========================================
+
+1. Place TopMinion-Crafting-1.0.0.jar in plugins/ folder
+2. Make sure TopMinion v3 is installed
+3. Restart server
+4. Done! Default recipes are auto-created
+
+========================================
+   AFTER FIRST START
+========================================
+
+Your folder structure will look like this:
+
+plugins/TopMinion-Crafting/
+├── config.yml           (settings only)
+├── MinionRecipes/       (individual recipe files)
+│   ├── miner.yml
+│   ├── farmer.yml
+│   ├── fisher.yml
+│   ├── lumberjack.yml
+│   └── slayer.yml
+└── UpgradeRecipes/      (individual recipe files)
+    ├── fuel.yml
+    ├── compactor.yml
+    ├── smelter.yml
+    └── diamond_spread.yml
+
+========================================
+   DEFAULT RECIPES INCLUDED
+========================================
+
+Minions:
+✓ Miner        - 8 Cobblestone + Diamond Pickaxe
+✓ Farmer       - 8 Wheat + Diamond Hoe
+✓ Fisher       - 8 Cod + Fishing Rod
+✓ Lumberjack   - 8 Oak Logs + Diamond Axe
+✓ Slayer       - 8 Rotten Flesh + Diamond Sword
+
+Upgrades:
+✓ Fuel         - 8 Coal + Iron Ingot
+✓ Compactor    - Iron + Hopper + Piston + Redstone
+✓ Smelter      - 8 Iron + Furnace
+✓ Diamond Spread - 8 Diamonds + Emerald
+
+========================================
+   QUICK EDITS
+========================================
+
+Match TopMinion Config IDs
+--------------------------
+1. Open a recipe file (e.g., MinionRecipes/miner.yml)
+2. Find the minion_id or upgrade_id line
+3. Make sure it matches EXACTLY with TopMinion configs
+4. TopMinion configs are in:
+   - Minions: plugins/TopMinion/MinionConfigs/[type]/
+   - Upgrades: plugins/TopMinion/MinionUpgrades/[type]/
+5. Run /topminioncrafting reload
+
+Add a New Recipe
+----------------
+1. Copy an existing recipe file
+2. Rename it (e.g., my_custom_miner.yml)
+3. Edit the minion_id and ingredients
+4. Run /topminioncrafting reload
+
+Disable a Recipe
+----------------
+Option 1: Open the file, set enabled: false
+Option 2: Delete or rename the file
+Then run /topminioncrafting reload
+
+========================================
+   COMMANDS
+========================================
+
+/topminioncrafting reload
+/tmc reload
+/tmcrafting reload
+
+Reload configuration and recipes without restart
+
+========================================
+   PERMISSIONS
+========================================
+
+topminioncrafting.admin
+  - Access to reload command (default: op)
+
+topminioncrafting.craft.minion
+  - Craft minions (default: everyone)
+
+topminioncrafting.craft.upgrade
+  - Craft upgrades (default: everyone)
+
+Custom permissions can be set per-recipe!
+
+========================================
+   RECIPE FILE FORMAT
+========================================
+
+Example shaped recipe:
+
+enabled: true
+minion_id: "MINER"
+minion_level: 1
+recipe_type: "SHAPED"
+shape:
+  - "CCC"
+  - "CPC"
+  - "CCC"
+ingredients:
+  C: COBBLESTONE
+  P: DIAMOND_PICKAXE
+permission: "topminioncrafting.craft.minion"
+
+(permission is optional!)
+
+========================================
+   TROUBLESHOOTING
+========================================
+
+Recipes not working?
+- Check minion_id matches TopMinion configs exactly
+- Enable debug: true in config.yml
+- Check server console for errors
+- Run /topminioncrafting reload
+
+Getting wrong items?
+- Verify the minion_id or upgrade_id
+- Make sure TopMinion has that minion/upgrade configured
+
+Permission denied?
+- Check the permission field in the recipe
+- Make sure player has the permission
+- Remove permission line to use defaults
+
+========================================
+   MORE INFO
+========================================
+
+RECIPE_STRUCTURE.md  - Detailed recipe guide
+GUIDE.html          - Full documentation (open in browser)
+config.yml          - Has tips and examples
+README.md           - Developer documentation
+
+========================================
+   SUPPORT
+========================================
+
+1. Enable debug mode in config.yml
+2. Check console for detailed messages
+3. Verify TopMinion v3 is installed
+4. Make sure IDs match exactly (case-sensitive!)
+
+Built: 2025-10-25

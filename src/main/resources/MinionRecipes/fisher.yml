@@ -1,0 +1,23 @@
+# Fisher Minion Recipe
+# Copy this file and modify it to create recipes for custom fisher minions
+
+enabled: true
+
+# Must match the minion_id in TopMinion/MinionConfigs/fisher/[filename].yml
+minion_id: "fisher-config-example"
+
+minion_level: 1
+
+recipe_type: "SHAPED"
+
+shape:
+  - "FFF"
+  - "FRF"
+  - "FFF"
+
+ingredients:
+  F: COD              # F = Cod
+  R: FISHING_ROD      # R = Fishing Rod
+
+# Permission is optional - remove this line to use default permission
+permission: "topminioncrafting.craft.minion"

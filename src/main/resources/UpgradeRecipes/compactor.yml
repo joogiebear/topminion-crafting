@@ -1,0 +1,23 @@
+# Compactor Upgrade Recipe
+# Copy this file and modify it to create recipes for custom compactor upgrades
+
+enabled: true
+
+# Must match the upgrade_id in TopMinion/MinionUpgrades/upgrade/[filename].yml
+upgrade_id: "compactor1"
+
+recipe_type: "SHAPED"
+
+shape:
+  - "IHI"
+  - "IPI"
+  - "IRI"
+
+ingredients:
+  I: IRON_INGOT     # I = Iron Ingot
+  H: HOPPER         # H = Hopper
+  P: PISTON         # P = Piston
+  R: REDSTONE       # R = Redstone
+
+# Permission is optional - remove this line to use default permission
+permission: "topminioncrafting.craft.upgrade"

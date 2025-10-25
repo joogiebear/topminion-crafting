@@ -1,0 +1,219 @@
+========================================
+   TopMinion-Crafting v1.0.0
+   MAJOR CHANGES - Individual Recipe Files
+========================================
+
+Date: 2025-10-25
+Build: Final with individual recipe system
+
+========================================
+   WHAT CHANGED
+========================================
+
+OLD SYSTEM:
+-----------
+- All recipes in one config.yml file
+- Hard to manage many recipes
+- Editing one recipe meant scrolling through all recipes
+
+NEW SYSTEM:
+-----------
+✓ Each recipe is its own file
+✓ Easy to copy/paste to create new recipes
+✓ Easy to disable individual recipes
+✓ Matches TopMinion's folder structure
+✓ Much cleaner and more organized
+
+========================================
+   NEW FOLDER STRUCTURE
+========================================
+
+plugins/TopMinion-Crafting/
+├── config.yml                  # ONLY SETTINGS NOW
+├── MinionRecipes/              # NEW FOLDER
+│   ├── miner.yml              # Individual recipe file
+│   ├── farmer.yml
+│   ├── fisher.yml
+│   ├── lumberjack.yml
+│   └── slayer.yml
+└── UpgradeRecipes/             # NEW FOLDER
+    ├── fuel.yml               # Individual recipe file
+    ├── compactor.yml
+    ├── smelter.yml
+    └── diamond_spread.yml
+
+========================================
+   BENEFITS
+========================================
+
+✓ Easy to Add New Recipes
+  - Just copy an existing file
+  - Rename it
+  - Edit the IDs and ingredients
+  - Reload
+
+✓ Easy to Disable Recipes
+  - Set enabled: false in the file
+  - Or delete/rename the file
+
+✓ No Conflicts
+  - Edit one recipe without affecting others
+  - Each file is independent
+
+✓ Better Organization
+  - Minion recipes in MinionRecipes/
+  - Upgrade recipes in UpgradeRecipes/
+  - Settings in config.yml
+
+✓ User-Friendly
+  - Non-devs can easily add recipes
+  - Copy & paste workflow
+  - Clear file names
+
+========================================
+   DEFAULT RECIPES PROVIDED
+========================================
+
+MINIONS (5 recipes):
+--------------------
+1. miner.yml        - Cobblestone + Diamond Pickaxe
+2. farmer.yml       - Wheat + Diamond Hoe
+3. fisher.yml       - Cod + Fishing Rod
+4. lumberjack.yml   - Oak Logs + Diamond Axe
+5. slayer.yml       - Rotten Flesh + Diamond Sword
+
+UPGRADES (4 recipes):
+---------------------
+1. fuel.yml         - Coal + Iron Ingot
+2. compactor.yml    - Iron + Hopper + Piston + Redstone
+3. smelter.yml      - Iron + Furnace
+4. diamond_spread.yml - Diamonds + Emerald
+
+All recipes match TopMinion's default configs!
+
+========================================
+   HOW TO USE
+========================================
+
+First Install:
+--------------
+1. Place TopMinion-Crafting-1.0.0.jar in plugins/
+2. Start server
+3. Default recipe files are auto-created
+4. Edit the files to match your TopMinion setup
+5. Run /topminioncrafting reload
+
+Adding a Recipe:
+----------------
+1. Copy an existing recipe file
+2. Rename it (e.g., my_custom_miner.yml)
+3. Edit these fields:
+   - minion_id or upgrade_id (must match TopMinion)
+   - shape and ingredients
+   - permission (optional)
+4. Save and run /topminioncrafting reload
+
+Editing a Recipe:
+-----------------
+1. Open the recipe file
+2. Change ingredients, shape, or permission
+3. Save and run /topminioncrafting reload
+
+Disabling a Recipe:
+-------------------
+Option 1: Set enabled: false
+Option 2: Delete the file
+Then run /topminioncrafting reload
+
+========================================
+   FEATURES UNCHANGED
+========================================
+
+✓ Optional permissions per recipe
+✓ Shaped and shapeless recipes
+✓ TopMinion API integration
+✓ SKIN upgrades blocked
+✓ Reload command works the same
+✓ All existing functionality preserved
+
+========================================
+   TECHNICAL DETAILS
+========================================
+
+File Loading:
+- Plugin checks MinionRecipes/ and UpgradeRecipes/ folders
+- Loads all .yml files in each folder
+- File names don't matter (only IDs inside do)
+- Can have multiple recipes per minion type
+
+Recipe Files:
+- Must have minion_id or upgrade_id
+- Must have recipe_type (SHAPED or SHAPELESS)
+- Must have ingredients
+- Permission field is optional
+- Can be enabled/disabled per file
+
+Auto-Creation:
+- Default recipe files are copied on first load
+- Uses saveResource() - won't overwrite existing files
+- Folders created automatically if missing
+
+========================================
+   MIGRATION FROM OLD VERSION
+========================================
+
+If you had custom recipes in old config.yml:
+
+1. Backup your old config.yml
+2. Install new version
+3. For each custom recipe:
+   - Copy a default recipe file
+   - Rename it
+   - Paste your recipe details into it
+4. Delete old config.yml
+5. Restart server
+
+========================================
+   DOCUMENTATION FILES
+========================================
+
+QUICK_START.txt       - Quick installation guide
+RECIPE_STRUCTURE.md   - Detailed recipe guide
+GUIDE.html           - Full user guide (browser)
+README.md            - Developer documentation
+BUILD.md             - Build instructions
+IMPORTANT_NOTES.txt  - Technical notes
+
+========================================
+   JAR INFORMATION
+========================================
+
+File: TopMinion-Crafting-1.0.0.jar
+Size: 23KB (larger due to included recipe files)
+Java: 17+ (built with Java 21)
+Minecraft: 1.19+
+TopMinion: v3.x required
+
+Built with: Gradle 9.0.0
+Includes: All default recipe files
+Uses: Reflection for API compatibility
+
+========================================
+   WHAT'S NEXT
+========================================
+
+Users can now:
+- Easily create recipes for custom minions
+- Share recipe files with others
+- Organize recipes however they want
+- Disable recipes without deleting them
+- Keep config.yml clean (only settings)
+
+========================================
+
+For full documentation, see GUIDE.html or README.md
+For quick help, see QUICK_START.txt
+For recipe details, see RECIPE_STRUCTURE.md
+
+Built: 2025-10-25
+Version: 1.0.0

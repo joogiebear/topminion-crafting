@@ -1,0 +1,74 @@
+========================================
+   IMPORTANT NOTES - TopMinion-Crafting
+========================================
+
+BUILD SUCCESSFUL!
+
+JAR Location: TopMinion-Crafting-1.0.0.jar
+Size: 17KB
+
+========================================
+   IMPORTANT: API COMPATIBILITY NOTE
+========================================
+
+This plugin was built for TopMinion v3, but the current dev build you provided
+has a LIMITED API that doesn't expose ConfigMinionManager and ConfigUpgradeManager
+through the normal API methods.
+
+WORKAROUND IMPLEMENTED:
+-----------------------
+The plugin uses REFLECTION to access these managers directly from the TopMinion
+plugin instance. This is a temporary workaround and works fine, but:
+
+- It may break if TopMinion's internal structure changes
+- It's not the "clean" way to use an API
+- When the full v3 API is released, the code should be updated
+
+CURRENT STATUS:
+---------------
+✓ Plugin compiles successfully
+✓ All features implemented
+✓ Should work with your current TopMinion v3 dev build
+✓ Uses reflection to access config managers
+✓ Permission system is fully optional
+✓ Excludes SKIN upgrades as requested
+
+TESTING CHECKLIST:
+------------------
+1. Place TopMinion-Crafting-1.0.0.jar in plugins/ folder
+2. Ensure TopMinion v3 is installed and working
+3. Start server
+4. Check that plugin loads without errors
+5. Edit config.yml to match your TopMinion minion IDs
+6. Run /topminioncrafting reload
+7. Test crafting a minion
+8. Test crafting an upgrade
+9. Verify items are correct TopMinion items
+
+KNOWN LIMITATIONS:
+------------------
+- Reflection may fail if TopMinion's field names change
+- Some Java security managers might block reflection
+- Debug mode recommended for troubleshooting
+
+IF PROBLEMS OCCUR:
+------------------
+1. Enable debug mode in config.yml (settings.debug: true)
+2. Check server console for detailed error messages
+3. Verify TopMinion v3 is loaded (green in /plugins)
+4. Check that minion_id matches exactly in TopMinion configs
+5. Make sure the field names "configMinionManager" and
+   "configUpgradeManager" exist in TopMinion main class
+
+FUTURE UPDATE NEEDED:
+---------------------
+When TopMinion v3 full API is released with proper getter methods
+like getConfigMinionManager() and getConfigUpgradeManager(),
+update ItemUtil.java to remove reflection and use proper API methods.
+
+========================================
+
+For user documentation, see GUIDE.html (open in browser)
+
+Plugin created: 2025-10-25
+Built with: Gradle 9.0.0, Java 21

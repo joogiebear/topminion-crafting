@@ -1,0 +1,221 @@
+========================================
+   GitHub Push Checklist
+   TopMinion-Crafting
+========================================
+
+✅ INCLUDE THESE (Push to GitHub):
+========================================
+
+Source Code:
+✓ src/
+  ✓ src/main/java/          (All Java files)
+  ✓ src/main/resources/     (Config & recipe files)
+    ✓ config.yml
+    ✓ plugin.yml
+    ✓ MinionRecipes/*.yml    (All default recipe files)
+    ✓ UpgradeRecipes/*.yml   (All default recipe files)
+
+Build Configuration:
+✓ build.gradle              (Gradle build file)
+✓ pom.xml                   (Maven build file - optional)
+
+Documentation:
+✓ README.md                 (Main documentation)
+✓ GUIDE.html                (User guide)
+✓ BUILD.md                  (Build instructions)
+✓ RECIPE_STRUCTURE.md       (Recipe guide)
+✓ QUICK_START.txt           (Quick start guide)
+✓ CHANGES.txt               (Changelog)
+✓ IMPORTANT_NOTES.txt       (Technical notes)
+
+Git Files:
+✓ .gitignore                (Git ignore file)
+✓ LICENSE                   (If you add one)
+
+Dependencies Folder:
+✓ lib/README.md             (Instructions to get TopMinion.jar)
+
+========================================
+
+❌ EXCLUDE THESE (Do NOT push):
+========================================
+
+Build Artifacts:
+✗ *.jar files               (Users should build their own)
+✗ build/                    (Gradle build output)
+✗ target/                   (Maven build output)
+✗ *.class files             (Compiled classes)
+
+Dependencies:
+✗ lib/*.jar                 (TopMinion.jar is proprietary)
+✗ lib/spigot-api*.jar       (Downloaded during build)
+
+IDE Files:
+✗ .idea/                    (IntelliJ IDEA settings)
+✗ .vscode/                  (VS Code settings)
+✗ .settings/                (Eclipse settings)
+✗ *.iml                     (IntelliJ module files)
+✗ .classpath                (Eclipse classpath)
+✗ .project                  (Eclipse project)
+
+Gradle Cache:
+✗ .gradle/                  (Gradle cache)
+✗ gradle/                   (Gradle wrapper - optional)
+
+OS Files:
+✗ .DS_Store                 (Mac)
+✗ Thumbs.db                 (Windows)
+✗ desktop.ini               (Windows)
+
+Local/Temp Files:
+✗ *.log                     (Log files)
+✗ *.tmp                     (Temp files)
+✗ *.swp                     (Vim swap files)
+
+========================================
+
+📂 FINAL FOLDER STRUCTURE ON GITHUB:
+========================================
+
+TopMinion-Crafting/
+├── .gitignore
+├── README.md
+├── LICENSE (optional)
+├── BUILD.md
+├── GUIDE.html
+├── RECIPE_STRUCTURE.md
+├── QUICK_START.txt
+├── CHANGES.txt
+├── IMPORTANT_NOTES.txt
+├── build.gradle
+├── pom.xml (optional)
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com/topminion/crafting/
+│       │       ├── TopMinionCrafting.java
+│       │       ├── listeners/
+│       │       │   └── CraftListener.java
+│       │       ├── managers/
+│       │       │   └── RecipeManager.java
+│       │       └── utils/
+│       │           └── ItemUtil.java
+│       └── resources/
+│           ├── config.yml
+│           ├── plugin.yml
+│           ├── MinionRecipes/
+│           │   ├── miner.yml
+│           │   ├── farmer.yml
+│           │   ├── fisher.yml
+│           │   ├── lumberjack.yml
+│           │   └── slayer.yml
+│           └── UpgradeRecipes/
+│               ├── fuel.yml
+│               ├── compactor.yml
+│               ├── smelter.yml
+│               └── diamond_spread.yml
+└── lib/
+    └── README.md (instructions only, no JARs)
+
+========================================
+
+🚀 GIT COMMANDS:
+========================================
+
+Initialize (if not already done):
+---------------------------------
+git init
+git add .gitignore
+git add README.md
+git commit -m "Initial commit with .gitignore"
+
+Add Files:
+----------
+git add src/
+git add *.md *.txt *.html
+git add build.gradle pom.xml
+git add .gitignore
+git add lib/README.md
+
+Commit:
+-------
+git commit -m "Initial release - TopMinion-Crafting v1.0.0"
+
+Create Repository on GitHub:
+-----------------------------
+1. Go to github.com
+2. Create new repository
+3. Name it: TopMinion-Crafting
+4. Don't initialize with README (you already have one)
+
+Push to GitHub:
+---------------
+git remote add origin https://github.com/YOUR_USERNAME/TopMinion-Crafting.git
+git branch -M main
+git push -u origin main
+
+========================================
+
+📝 RECOMMENDED README.md SECTIONS:
+========================================
+
+Your README.md should include:
+✓ Project description
+✓ Features list
+✓ Requirements (TopMinion v3, Java 17+, Minecraft 1.19+)
+✓ Installation instructions
+✓ Build instructions
+✓ Configuration examples
+✓ Usage examples
+✓ License information
+✓ Credits
+✓ Support/Contact info
+
+========================================
+
+⚠️ IMPORTANT NOTES:
+========================================
+
+1. TopMinion.jar should NOT be committed
+   - It's proprietary/paid software
+   - Users must provide their own copy
+   - lib/README.md explains where to get it
+
+2. Built JARs should NOT be committed
+   - Users should build from source
+   - Or download from GitHub Releases
+
+3. GitHub Releases
+   - After pushing, you can create a Release
+   - Upload TopMinion-Crafting-1.0.0.jar there
+   - Users can download pre-built JARs from Releases
+
+4. License
+   - Add a LICENSE file if you want
+   - MIT, GPL, Apache 2.0, etc.
+   - Clarify TopMinion is required but separate
+
+========================================
+
+✅ QUICK PUSH CHECKLIST:
+========================================
+
+Before pushing:
+□ Delete build/ folder
+□ Delete lib/*.jar files
+□ Delete *.jar files
+□ Delete .idea/ folder
+□ Keep lib/README.md
+□ Verify .gitignore is correct
+□ Test that build works from source
+□ Update version numbers if needed
+
+After pushing:
+□ Verify files on GitHub
+□ Test cloning and building
+□ Create a Release with pre-built JAR
+□ Update README if needed
+
+========================================
+
+Need help? Check the .gitignore file for what's excluded!

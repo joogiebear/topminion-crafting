@@ -1,0 +1,84 @@
+# TopMinion-Crafting Configuration
+# Main settings file
+
+# ========================================
+#  RECIPE FILES
+# ========================================
+# Recipes are stored in individual files for easy management:
+#
+# MinionRecipes/
+#   ├── miner.yml          - Miner minion recipe
+#   ├── farmer.yml         - Farmer minion recipe
+#   ├── fisher.yml         - Fisher minion recipe
+#   ├── lumberjack.yml     - Lumberjack minion recipe
+#   └── slayer.yml         - Slayer minion recipe
+#
+# UpgradeRecipes/
+#   ├── fuel.yml           - Fuel upgrade recipe
+#   ├── compactor.yml      - Compactor upgrade recipe
+#   ├── smelter.yml        - Smelter upgrade recipe
+#   └── diamond_spread.yml - Diamond spread upgrade recipe
+#
+# To add a new recipe:
+# 1. Copy an existing recipe file
+# 2. Rename it to something descriptive
+# 3. Edit the file with your recipe details
+# 4. Run /topminioncrafting reload
+#
+# To disable a recipe:
+# - Set "enabled: false" in the recipe file
+# - Or delete/rename the file
+#
+# ========================================
+
+# General Settings
+settings:
+  # Show debug messages in console
+  # Set to true when troubleshooting recipe issues
+  debug: false
+
+  # Prefix for plugin messages sent to players
+  prefix: "&8[&6TopMinion-Crafting&8]&7"
+
+  # Messages sent to players
+  messages:
+    reload_success: "&aConfiguration reloaded successfully!"
+    no_permission: "&cYou don't have permission to do that!"
+    minion_crafted: "&aYou crafted a {minion} minion!"
+    upgrade_crafted: "&aYou crafted a {upgrade} upgrade!"
+
+    # Error messages
+    error_topminion_not_found: "&cTopMinion is not loaded! This plugin requires TopMinion v3."
+    error_item_creation_failed: "&cFailed to create item! Check server console for details."
+    error_invalid_minion_id: "&cInvalid minion ID: {id}. Check your recipe file."
+    error_invalid_upgrade_id: "&cInvalid upgrade ID: {id}. Check your recipe file."
+
+# ========================================
+#  TIPS
+# ========================================
+#
+# Matching IDs:
+# - minion_id must match exactly with TopMinion's minion_id
+#   Found in: plugins/TopMinion/MinionConfigs/[type]/[filename].yml
+#
+# - upgrade_id must match exactly with TopMinion's upgrade id
+#   Found in: plugins/TopMinion/MinionUpgrades/[type]/[filename].yml
+#
+# Permissions:
+# - Each recipe can have an optional "permission" field
+# - If omitted, uses defaults:
+#   * Minions: topminioncrafting.craft.minion (everyone has this)
+#   * Upgrades: topminioncrafting.craft.upgrade (everyone has this)
+# - To restrict a recipe, add a custom permission like:
+#   permission: "vip.craft.special"
+#
+# Recipe Types:
+# - SHAPED: Items must be in specific positions (like vanilla recipes)
+# - SHAPELESS: Items can be placed anywhere in the crafting grid
+#
+# Need Help?
+# - Open GUIDE.html in your browser for detailed documentation
+# - Enable debug mode above to see detailed console messages
+# - Run /topminioncrafting reload after changing any files
+#
+# ========================================

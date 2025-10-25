@@ -1,0 +1,25 @@
+# Coal Fuel Upgrade Recipe
+# Copy this file and modify it to create recipes for custom fuel upgrades
+
+enabled: true
+
+# Must match the upgrade_id in TopMinion/MinionUpgrades/fuel/[filename].yml
+upgrade_id: "fuel"
+
+recipe_type: "SHAPED"
+
+shape:
+  - "CCC"
+  - "CIC"
+  - "CCC"
+
+ingredients:
+  C: COAL           # C = Coal
+  I: IRON_INGOT     # I = Iron Ingot
+
+# OPTIONAL: Custom permission required to craft this upgrade
+# If not specified, uses default: topminioncrafting.craft.upgrade
+# Remove or comment out this line to use the default permission
+permission: "topminioncrafting.craft.upgrade"
+
+# NOTE: SKIN type upgrades cannot be crafted (intentionally blocked)

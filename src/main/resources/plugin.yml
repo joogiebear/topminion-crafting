@@ -1,0 +1,25 @@
+name: TopMinion-Crafting
+version: 1.0.0
+main: com.topminion.crafting.TopMinionCrafting
+api-version: 1.19
+author: YourName
+description: Addon for TopMinion that adds crafting recipes for minions and upgrades
+depend: [TopMinion]
+
+commands:
+  topminioncrafting:
+    description: Reload TopMinion-Crafting configuration
+    usage: /topminioncrafting reload
+    aliases: [tmc, tmcrafting]
+    permission: topminioncrafting.admin
+
+permissions:
+  topminioncrafting.admin:
+    description: Allows access to admin commands
+    default: op
+  topminioncrafting.craft.minion:
+    description: Allows crafting minions
+    default: true
+  topminioncrafting.craft.upgrade:
+    description: Allows crafting upgrades
+    default: true
